@@ -54,15 +54,15 @@ function switchChannel(channelObject) {
 function star() {
     // Toggling star
     // #7 replace image with icon
-    $('#chat h1 i').toggleClass('fas');
-    $('#chat h1 i').toggleClass('far');
+    $('#channel-star i').toggleClass('fas');
+    $('#channel-star i').toggleClass('far');
 
     // #7 toggle star also in data model
     currentChannel.starred = !currentChannel.starred;
 
     // #7 toggle star also in list
-    $('#channels li:contains(' + currentChannel.name + ') .fa').removeClass('fas far');
-    $('#channels li:contains(' + currentChannel.name + ') .fa').addClass(currentChannel.starred ? 'fas' : 'far');
+    $('#channels li:contains(' + currentChannel.name + ') .fa-star').removeClass('fas far');
+    $('#channels li:contains(' + currentChannel.name + ') .fa-star').addClass(currentChannel.starred ? 'fas' : 'far');
 }
 
 /**
@@ -140,7 +140,7 @@ function createMessageElement(messageObject) {
         messageObject.createdOn.toLocaleString() +
         '<em>' + expiresIn+ ' min. left</em></h3>' +
         '<p>' + messageObject.text + '</p>' +
-        '<button>+5 min.</button>' +
+        '<button class="accent">+5 min.</button>' +
         '</div>';
 }
 
